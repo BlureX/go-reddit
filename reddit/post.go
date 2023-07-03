@@ -65,8 +65,12 @@ type SubmitLinkRequest struct {
 // Get a post with its comments.
 // id is the ID36 of the post, not its full id.
 // Example: instead of t3_abc123, use abc123.
-func (s *PostService) Get(ctx context.Context, id string) (*PostAndComments, *Response, error) {
+func (s *PostService) Get(ctx context.Context, id string, opts ListPostSearchOptions) (*PostAndComments, *Response, error) {
 	path := fmt.Sprintf("comments/%s", id)
+	path, err := addOptions(path, opts)
+	if err != nil {
+		return nil, nil, err
+	}
 	req, err := s.client.NewRequest(http.MethodGet, path, nil)
 	if err != nil {
 		return nil, nil, err
