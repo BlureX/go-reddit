@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/vartanbeno/go-reddit/v2/reddit"
+	"github.com/BlureX/go-reddit/v2/reddit"
 )
 
 var ctx = context.Background()
