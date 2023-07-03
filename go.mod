@@ -1,6 +1,6 @@
 module github.com/BlureX/go-reddit/v2
 
-go 1.15
+go 1.20
 
 require (
 	github.com/google/go-querystring v1.0.0
